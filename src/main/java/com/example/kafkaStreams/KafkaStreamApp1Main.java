@@ -89,7 +89,7 @@ public class KafkaStreamApp1Main {
             jsonNode.put("accountType", parts[3]);
             jsonNode.put("accountNumber", Integer.parseInt(parts[4]));
             jsonNode.put("transactionType", parts[5]);
-            jsonNode.put("amount", new BigDecimal(parts[6]));
+            jsonNode.put("amount",  Float.parseFloat(parts[6]));
 
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             Date transactionDate = dateFormat.parse(parts[7]);

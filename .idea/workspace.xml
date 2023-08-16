@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1e98ee6-b65e-4761-8c93-6fa0ff5d345c" name="Changes" comment="initial">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/kafkaStreams/KafkaStreamApp2Exception.java" afterDir="false" />
+    <list default="true" id="c1e98ee6-b65e-4761-8c93-6fa0ff5d345c" name="Changes" comment="commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/kafkaStreams/KafkaStreamApp3DebitWarning.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kafkaStreams/JsonKafkaStream.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kafkaStreams/KafkaStreamApp1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kafkaStreams/KafkaStreamApp1Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kafkaStreams/ProducerClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kafkaStreams/KafkaStreamApp1Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kafkaStreams/KafkaStreamApp1Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,6 +93,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="KafkaStreamApp3DebitWarning" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.kafkaStreams.KafkaStreamApp3DebitWarning" />
+      <module name="kafkaStreams" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.kafkaStreams.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ProducerClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -112,8 +123,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.KafkaStreamApp2Exception" />
+        <item itemvalue="Application.KafkaStreamApp3DebitWarning" />
         <item itemvalue="Application.KafkaStreamApp1Main" />
+        <item itemvalue="Application.KafkaStreamApp2Exception" />
         <item itemvalue="Application.ProducerClass" />
         <item itemvalue="Application.JsonKafkaStream" />
       </list>
@@ -135,11 +147,29 @@
       <option name="project" value="LOCAL" />
       <updated>1692186647430</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="commit">
+      <created>1692190782286</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1692190782286</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial" />
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NumberFormatException" package="java.lang" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
