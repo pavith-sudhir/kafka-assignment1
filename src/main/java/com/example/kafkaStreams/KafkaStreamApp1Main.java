@@ -19,7 +19,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
 
-public class KafkaStreamApp1 {
+public class KafkaStreamApp1Main {
 
     public static void main(final String[] args) throws Exception {
         Properties props = new Properties();
@@ -33,9 +33,28 @@ public class KafkaStreamApp1 {
         StreamsBuilder builder = new StreamsBuilder();
         KStream<String, String> textLines = builder.stream("transactions-q1", Consumed.with(Serdes.String(), Serdes.String()));
 
-        textLines
-                .mapValues(KafkaStreamApp1::extractAndConvertPayload)
-                .to("jout", Produced.with(Serdes.String(), Serdes.String()));
+        KStream<String, String> validData = textLines
+                .mapValues(KafkaStreamApp1Main::extractAndConvertPayload)
+                .filter((key, value) -> !value.equals("{}"));
+
+        KStream<String, String> debData = validData
+                .filter((key, value) -> value.contains("transactionType\":\"debit"))
+                .selectKey((key, value) -> "debit"); //to debit q
+
+        KStream<String, String> credData = validData
+                .filter((key, value) -> value.contains("transactionType\":\"credit"))
+                .selectKey((key, value) -> "credit"); //to credit q
+
+        KStream<String, String> invalidData = textLines
+                .filter((key, value) -> {
+                    String convertedValue = extractAndConvertPayload(value);
+                    return convertedValue.equals("{}");
+                }); // to exception-q
+
+
+        debData.to("debit-q1", Produced.with(Serdes.String(), Serdes.String()));
+        credData.to("credit-q1", Produced.with(Serdes.String(), Serdes.String()));
+        invalidData.to("exceptions-q1", Produced.with(Serdes.String(), Serdes.String()));
 
         KafkaStreams streams = new KafkaStreams(builder.build(), props);
         streams.cleanUp();
