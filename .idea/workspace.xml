@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1e98ee6-b65e-4761-8c93-6fa0ff5d345c" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/kafkaStreams/KafkaStreamApp3DebitWarning.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/kafkaStreams/KafkaStreamApp4CreditWarning.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kafkaStreams/KafkaStreamApp1Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kafkaStreams/KafkaStreamApp1Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/kafkaStreams/KafkaStreamApp3DebitWarning.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/kafkaStreams/KafkaStreamApp3DebitWarning.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,26 +48,15 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/211504/IdeaProjects/TransactionFraudDetect/src/main/java/com/example/kafkaStreams/KafkaStreamApp3DebitWarning.java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "two.files.diff.last.used.file": "C:/Users/211504/IdeaProjects/TransactionFraudDetect/src/main/java/com/example/kafkaStreams/KafkaStreamApp3DebitWarning.java"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.KafkaStreamApp1Main">
-    <configuration name="JsonKafkaStream" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.kafkaStreams.JsonKafkaStream" />
-      <module name="TransactionFraudDetect" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.kafkaStreams.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.KafkaStreamApp3DebitWarning">
     <configuration name="KafkaStreamApp1Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.kafkaStreams.KafkaStreamApp1Main" />
       <module name="kafkaStreams" />
@@ -106,6 +96,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="KafkaStreamApp4CreditWarning" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.kafkaStreams.KafkaStreamApp4CreditWarning" />
+      <module name="kafkaStreams" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.kafkaStreams.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ProducerClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -123,11 +126,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.KafkaStreamApp4CreditWarning" />
         <item itemvalue="Application.KafkaStreamApp3DebitWarning" />
-        <item itemvalue="Application.KafkaStreamApp1Main" />
         <item itemvalue="Application.KafkaStreamApp2Exception" />
+        <item itemvalue="Application.KafkaStreamApp1Main" />
         <item itemvalue="Application.ProducerClass" />
-        <item itemvalue="Application.JsonKafkaStream" />
       </list>
     </recent_temporary>
   </component>
@@ -154,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692190782286</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="commit">
+      <created>1692195444876</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1692195444876</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

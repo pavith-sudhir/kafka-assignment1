@@ -12,6 +12,7 @@ import org.apache.kafka.streams.StreamsBuilder;
 import org.apache.kafka.streams.StreamsConfig;
 import org.apache.kafka.streams.kstream.Consumed;
 import org.apache.kafka.streams.kstream.KStream;
+import org.apache.kafka.streams.kstream.Printed;
 import org.apache.kafka.streams.kstream.Produced;
 
 import java.math.BigDecimal;
@@ -52,9 +53,12 @@ public class KafkaStreamApp1Main {
                 }); // to exception-q
 
 
-        debData.to("debit-q1", Produced.with(Serdes.String(), Serdes.String()));
-        credData.to("credit-q1", Produced.with(Serdes.String(), Serdes.String()));
+        debData.to("debit-q3", Produced.with(Serdes.String(), Serdes.String()));
+        debData.print(Printed.toSysOut());
+        credData.to("credit-q3", Produced.with(Serdes.String(), Serdes.String()));
+        credData.print(Printed.toSysOut());
         invalidData.to("exceptions-q1", Produced.with(Serdes.String(), Serdes.String()));
+        invalidData.print(Printed.toSysOut());
 
         KafkaStreams streams = new KafkaStreams(builder.build(), props);
         streams.cleanUp();

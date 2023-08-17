@@ -14,11 +14,11 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Properties;
 
-public class KafkaStreamApp3DebitWarning {
+public class KafkaStreamApp4CreditWarning {
 
     public static void main(final String[] args) {
         Properties props = new Properties();
-        props.put(StreamsConfig.APPLICATION_ID_CONFIG, "debit-suspicion-detector");
+        props.put(StreamsConfig.APPLICATION_ID_CONFIG, "credit-suspicion-detector");
         props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         props.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.String().getClass());
         props.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass());
@@ -26,12 +26,12 @@ public class KafkaStreamApp3DebitWarning {
         props.put(StreamsConfig.CACHE_MAX_BYTES_BUFFERING_CONFIG, "0");
 
         StreamsBuilder builder = new StreamsBuilder();
-        KStream<String, String> debitQueueData = builder.stream("debit-q3", Consumed.with(Serdes.String(), Serdes.String()));
+        KStream<String, String> debitQueueData = builder.stream("credit-q3", Consumed.with(Serdes.String(), Serdes.String()));
 
-        KStream<String, String> filteredDebitData = debitQueueData.filter((key, value) -> isSuspicious(value));
+        KStream<String, String> filteredCreditData = debitQueueData.filter((key, value) -> isSuspicious(value));
 
-        filteredDebitData.print(Printed.toSysOut());
-        filteredDebitData.foreach((key, value) -> writeToFile(value));
+        filteredCreditData.print(Printed.toSysOut());
+        filteredCreditData.foreach((key, value) -> writeToFile(value));
 
         KafkaStreams streams = new KafkaStreams(builder.build(), props);
         streams.cleanUp();
@@ -41,7 +41,7 @@ public class KafkaStreamApp3DebitWarning {
     private static boolean isSuspicious(String value) {
         String[] parts = value.split(",");
         Float amount = new Float(parts[6].replaceAll("\"amount\":", "").replaceAll("\"", "").trim());
-        return (amount > 300.0);
+        return (amount > 1000.0);
     }
 
     private static void writeToFile(String data) {
@@ -51,8 +51,8 @@ public class KafkaStreamApp3DebitWarning {
         String secondName = parts[2].replaceAll("\"secondName\":", "").replaceAll("\"", "").trim();
         Float amount = new Float(parts[6].replaceAll("\"amount\":", "").replaceAll("\"", "").trim());
         try {
-            FileWriter writer = new FileWriter("C:\\Apache-kafka\\kafka3\\DebitWarnings1.txt", true);
-            String message = String.format("Debit transaction for account %s for customer %s %s is suspicious with amount %s.",
+            FileWriter writer = new FileWriter("C:\\Apache-kafka\\kafka3\\CreditWarnings1.txt", true);
+            String message = String.format("Credit transaction for account %s for customer %s %s is suspicious with amount %s.",
                     accountNumber, firstName, secondName, amount);
             writer.write(message + "\n");
             writer.close();
